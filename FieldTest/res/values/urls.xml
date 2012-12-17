@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_relative_url">/account/login</string>
+    <string name="signup_relative_url">/account/signup</string>
+    <string name="registry_url">http://working-title.media.mit.edu:8003</string>
+    <string name="clients_relative_url">/account/clients</string>
+    <string name="token_relative_url">/oauth2/token/</string>
+    <string name="userinfo_relative_url">/oauth2/userinfo</string>
+    
+</resources>
