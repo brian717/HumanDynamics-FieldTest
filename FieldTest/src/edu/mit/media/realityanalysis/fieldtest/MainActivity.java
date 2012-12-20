@@ -1,28 +1,22 @@
 package edu.mit.media.realityanalysis.fieldtest;
 
-import android.content.Context;
+import java.util.HashMap;
+import java.util.Map;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.TextView;
 
 public class MainActivity extends FragmentActivity {
-	private WebView _mainWebView;
-
+	private ViewPager mViewPager;
+	private WebViewFragmentPagerAdapter mFragmentAdapter;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -35,13 +29,21 @@ public class MainActivity extends FragmentActivity {
 		
 		if (token != null && uuid != null && pdsLocation != null) {
 			setContentView(R.layout.activity_main);
+			mViewPager = (ViewPager) findViewById(R.id.viewpager);
 			
-			_mainWebView = (WebView) findViewById(R.id.webview);
-			_mainWebView.getSettings().setJavaScriptEnabled(true);
-			_mainWebView.setWebViewClient(new WebViewClient());
+			if (mFragmentAdapter == null) {
+				mFragmentAdapter = new WebViewFragmentPagerAdapter(getSupportFragmentManager());
+				
+				String visualizationUrl = String.format("%s%s?bearer_token=%s&datastore_owner=%s", pdsLocation, getString(R.string.visualization_relative_url), token, uuid);
+				String adminUrl = String.format("%s%s?bearer_token=%s&datastore_owner=%s", pdsLocation, "/admin/audit/", token, uuid);
 	
-			//_mainWebView.addJavascriptInterface(new WebViewLoginInterface(this), "android");
-			_mainWebView.loadUrl(String.format("%s%s?bearer_token=%s&datastore_owner=%s", pdsLocation, "/admin/audit/", token, uuid));
+				mFragmentAdapter.addItem(WebViewFragment.Create(visualizationUrl, "My Social Health", this));
+				mFragmentAdapter.addItem(WebViewFragment.Create(adminUrl, "My PDS", this));
+				
+				mViewPager.setAdapter(mFragmentAdapter);
+				mViewPager.setCurrentItem(0);
+			}
+			
 		} else {
 			startLoginActivity();
 		}
@@ -65,8 +67,17 @@ public class MainActivity extends FragmentActivity {
 		}
 	}
 	
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+		// TODO Auto-generated method stub
+		super.onConfigurationChanged(newConfig);
+		
+		if (mFragmentAdapter != null) {
+			mFragmentAdapter.requestLayout();
+		}
+	}
+	
 	private void startLoginActivity() {
-
 		Intent loginIntent = new Intent(this, LoginActivity.class);
 		startActivity(loginIntent);
 	}

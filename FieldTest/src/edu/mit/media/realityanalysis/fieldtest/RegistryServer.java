@@ -10,7 +10,6 @@ import java.util.List;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
@@ -24,6 +23,12 @@ import org.json.JSONObject;
 import android.content.Context;
 import android.util.Log;
 
+/***
+ * Represents a registry server within a Trust Framework, along with operations to signup, authorize clients, and
+ * retrieve information about a user associated with an authorized token.
+ * @author Brian Sweatt
+ *
+ */
 public class RegistryServer {
 
 	private static final String LOG_TAG = "RegistryServer";
@@ -105,6 +110,12 @@ public class RegistryServer {
 		return null;	
 	}
 	
+	/***
+	 * Retrieves user information associated with an OAuth2 token from the registry server
+	 * @param token The OAuth token to retrieve information about
+	 * @return A JSONObject with fields for pds_location, id, name, and email for the user associated with the given token, or null if no such user exists.
+	 * @throws IOException Thrown if an error occurred while contacting the registry server.
+	 */
 	public JSONObject getUserInfo(String token) throws IOException {
 		String url = getAbsoluteUrl(R.string.userinfo_relative_url, new BasicNameValuePair("bearer_token", token));
 		

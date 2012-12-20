@@ -1,31 +1,11 @@
 package edu.mit.media.realityanalysis.fieldtest;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.CharBuffer;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.BufferedHttpEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.Context;
 import android.content.SharedPreferences.Editor;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -36,9 +16,6 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.webkit.WebChromeClient;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,12 +25,6 @@ import android.widget.Toast;
  * well.
  */
 public class LoginActivity extends Activity {
-	/**
-	 * A dummy authentication store containing known user names and passwords.
-	 * TODO: remove after connecting to a real authentication system.
-	 */
-	private static final String[] DUMMY_CREDENTIALS = new String[] {
-			"foo@example.com:hello", "bar@example.com:world" };
 	
 	private static final String LOG_TAG = "LoginActivity";
 	
@@ -72,9 +43,6 @@ public class LoginActivity extends Activity {
 	private View mLoginFormView;
 	private View mLoginStatusView;
 	private TextView mLoginStatusMessageView;
-	private WebView mLoginWebView;
-	
-	private Boolean loading = true;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -110,10 +78,6 @@ public class LoginActivity extends Activity {
 						attemptLogin();
 					}
 				});
-	}
-
-	private String getRegistryUrl(int resourceId) {
-		return String.format("%s%s", getString(R.string.registry_url), getString(resourceId));
 	}
 	
 	@Override
@@ -364,12 +328,6 @@ public class LoginActivity extends Activity {
 						.setError(getString(R.string.error_incorrect_password));
 				mPasswordView.requestFocus();
 			}
-		}
-
-		@Override
-		protected void onCancelled() {
-			mAuthTask = null;
-			showProgress(false);
 		}
 	}
 }
