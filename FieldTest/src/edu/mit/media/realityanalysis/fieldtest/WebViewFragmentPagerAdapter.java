@@ -35,10 +35,5 @@ public class WebViewFragmentPagerAdapter extends FragmentPagerAdapter {
 		mFragments.add(fragment);
 	}
 	
-	public void requestLayout() {
-		for (WebViewFragment fragment : mFragments) {
-			fragment.getWebView().refreshDrawableState();
-		}
-	}
 	
 }

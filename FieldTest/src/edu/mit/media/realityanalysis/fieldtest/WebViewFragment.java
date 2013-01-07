@@ -62,9 +62,6 @@ public class WebViewFragment extends Fragment {
 			
 			@Override
 			public void onPageFinished(WebView view, String url) {		
-				// NOTE: change this to use a javascript interface to android: 
-				// having it done onload should be faster, or allow us to stop the navbar from loading at all
-				view.loadUrl("javascript:$('#navbar').hide()");
 				mWebView.setVisibility(View.VISIBLE);
 				mLoadingStatusView.setVisibility(View.GONE);
 			}
@@ -75,7 +72,9 @@ public class WebViewFragment extends Fragment {
 				view.loadData(getString(R.string.problem_contacting_server), "text/html", "UTF-8");
 			}		
 		});
-			
+					
+		mWebView.addJavascriptInterface(new WebViewFragmentJavascriptInterface(), "android");
+		
 		if (savedInstanceState != null) {
 			mWebView.restoreState(savedInstanceState);
 		} else {
@@ -89,7 +88,11 @@ public class WebViewFragment extends Fragment {
 		return mTitle;
 	}
 	
-	public WebView getWebView() {
-		return mWebView;
+	private class WebViewFragmentJavascriptInterface {
+		
+		public Boolean hideWebNavBar() {
+			return true;
+		}
 	}
+	
 }

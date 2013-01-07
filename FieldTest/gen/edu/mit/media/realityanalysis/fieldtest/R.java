@@ -40,35 +40,40 @@ public final class R {
         public static final int activity_main=0x7f060001;
     }
     public static final class string {
-        public static final int action_sign_in_register=0x7f04000c;
-        public static final int action_sign_in_short=0x7f04000d;
-        public static final int app_name=0x7f040000;
-        public static final int client_basic_auth=0x7f040004;
-        public static final int client_key=0x7f040002;
-        public static final int client_scope=0x7f040005;
-        public static final int client_secret=0x7f040003;
-        public static final int clients_relative_url=0x7f040017;
-        public static final int error_field_required=0x7f040013;
-        public static final int error_incorrect_password=0x7f040012;
-        public static final int error_invalid_email=0x7f040010;
-        public static final int error_invalid_password=0x7f040011;
-        public static final int loading=0x7f040007;
-        public static final int login_progress_signing_in=0x7f04000f;
-        public static final int login_relative_url=0x7f040014;
-        public static final int menu_forgot_password=0x7f04000e;
-        public static final int menu_settings=0x7f040001;
-        public static final int problem_contacting_server=0x7f040008;
-        public static final int prompt_password=0x7f04000b;
+        public static final int access_token_prefs_key=0x7f040001;
+        public static final int action_sign_in_register=0x7f040011;
+        public static final int action_sign_in_short=0x7f040012;
+        public static final int app_name=0x7f040005;
+        public static final int client_basic_auth=0x7f040009;
+        public static final int client_key=0x7f040007;
+        public static final int client_scope=0x7f04000a;
+        public static final int client_secret=0x7f040008;
+        public static final int clients_relative_url=0x7f04001c;
+        public static final int default_funf_password=0x7f04000d;
+        public static final int error_field_required=0x7f040018;
+        public static final int error_incorrect_password=0x7f040017;
+        public static final int error_invalid_email=0x7f040015;
+        public static final int error_invalid_password=0x7f040016;
+        public static final int loading=0x7f04000b;
+        public static final int login_progress_signing_in=0x7f040014;
+        public static final int login_relative_url=0x7f040019;
+        public static final int menu_forgot_password=0x7f040013;
+        public static final int menu_settings=0x7f040006;
+        public static final int password_prefs_key=0x7f040004;
+        public static final int prefs_file=0x7f040000;
+        public static final int problem_contacting_server=0x7f04000c;
+        public static final int prompt_password=0x7f040010;
         /**  Strings related to login 
          */
-        public static final int prompt_username=0x7f04000a;
-        public static final int registry_url=0x7f040016;
-        public static final int signup_relative_url=0x7f040015;
-        public static final int title_activity_login=0x7f040009;
-        public static final int token_prefs_file=0x7f040006;
-        public static final int token_relative_url=0x7f040018;
-        public static final int userinfo_relative_url=0x7f040019;
-        public static final int visualization_relative_url=0x7f04001a;
+        public static final int prompt_username=0x7f04000f;
+        public static final int refresh_token_prefs_key=0x7f040002;
+        public static final int registry_url=0x7f04001b;
+        public static final int signup_relative_url=0x7f04001a;
+        public static final int title_activity_login=0x7f04000e;
+        public static final int token_expiration_time_prefs_key=0x7f040003;
+        public static final int token_relative_url=0x7f04001d;
+        public static final int userinfo_relative_url=0x7f04001e;
+        public static final int visualization_relative_url=0x7f04001f;
     }
     public static final class style {
         /** 

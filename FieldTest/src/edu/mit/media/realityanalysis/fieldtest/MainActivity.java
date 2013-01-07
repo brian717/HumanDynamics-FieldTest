@@ -21,7 +21,7 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		SharedPreferences prefs = getSharedPreferences(getString(R.string.token_prefs_file), MODE_PRIVATE);
+		SharedPreferences prefs = getSharedPreferences(getString(R.string.prefs_file), MODE_PRIVATE);
 		
 		String token = prefs.getString("accessToken", null);
 		String uuid = prefs.getString("uuid", null);
@@ -64,16 +64,6 @@ public class MainActivity extends FragmentActivity {
 				return true;
 			default:
 				return super.onOptionsItemSelected(item);
-		}
-	}
-	
-	@Override
-	public void onConfigurationChanged(Configuration newConfig) {
-		// TODO Auto-generated method stub
-		super.onConfigurationChanged(newConfig);
-		
-		if (mFragmentAdapter != null) {
-			mFragmentAdapter.requestLayout();
 		}
 	}
 	

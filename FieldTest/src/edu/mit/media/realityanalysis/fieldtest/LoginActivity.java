@@ -211,7 +211,7 @@ public class LoginActivity extends Activity {
 					showToast("Error while getting user info.");
 					Log.e(LOG_TAG, String.format("Error while getting user info: %s - %s", responseJson.getString("error"), responseJson.getString("error_description")));
 				} else if (responseJson.has("id") && responseJson.has("pds_location")) {
-					Editor prefsEditor = mActivity.getSharedPreferences(mActivity.getString(R.string.token_prefs_file), MODE_PRIVATE).edit();
+					Editor prefsEditor = mActivity.getSharedPreferences(mActivity.getString(R.string.prefs_file), MODE_PRIVATE).edit();
 					
 					prefsEditor.putString("uuid", responseJson.getString("id"));
 					prefsEditor.putString("pds_location", responseJson.getString("pds_location"));
@@ -296,7 +296,7 @@ public class LoginActivity extends Activity {
 					showToast("Login failed - please check your username and password.");
 					return null;
 				} else if (responseJson.has("access_token") && responseJson.has("refresh_token") && responseJson.has("expires_in")) {
-					Editor prefsEditor = getSharedPreferences(getString(R.string.token_prefs_file), MODE_PRIVATE).edit();
+					Editor prefsEditor = getSharedPreferences(getString(R.string.prefs_file), MODE_PRIVATE).edit();
 					prefsEditor.putString("accessToken", responseJson.getString("access_token"));
 					prefsEditor.putString("refreshToken", responseJson.getString("refresh_token"));
 					prefsEditor.putLong("tokenExpirationTime", System.currentTimeMillis() + (responseJson.getLong("expires_in") * 1000));

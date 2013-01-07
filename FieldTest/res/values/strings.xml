@@ -7,8 +7,8 @@
     <string name="client_secret">c95a92268dd0b777fced40d38a68e6</string>
     <string name="client_basic_auth">Basic MDg5MmNkYjk3ZmVjMjUwMjUwZmFhZDlhYzhlYzJmOmM5NWE5MjI2OGRkMGI3NzdmY2VkNDBkMzhhNjhlNg==</string>
     <string name="client_scope">funf_write</string>
-    <string name="token_prefs_file">TokenPrefs</string>
     <string name="loading">Loading&#8230;</string>
     <string name="problem_contacting_server">There was a problem contacting the server. Please try again later.</string>
-
+    <string name="default_funf_password">changeme</string>
+    
 </resources>
