@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Human Dynamics</string>
+    <string name="app_name">Reality Analysis</string>
     <string name="menu_settings">Settings</string>
     <string name="client_key">0892cdb97fec250250faad9ac8ec2f</string>
     <string name="client_secret">c95a92268dd0b777fced40d38a68e6</string>
@@ -10,5 +10,8 @@
     <string name="loading">Loading&#8230;</string>
     <string name="problem_contacting_server">There was a problem contacting the server. Please try again later.</string>
     <string name="default_funf_password">changeme</string>
-    
+    <string name="title_activity_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_debug">DebugActivity</string>
+
 </resources>

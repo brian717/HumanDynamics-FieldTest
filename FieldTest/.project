@@ -3,6 +3,7 @@
 	<name>FieldTest</name>
 	<comment></comment>
 	<projects>
+		<project>funf</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

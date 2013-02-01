@@ -6,6 +6,10 @@
     <string name="clients_relative_url">/account/clients</string>
     <string name="token_relative_url">/oauth2/token/</string>
     <string name="userinfo_relative_url">/oauth2/userinfo</string>
-    <string name="visualization_relative_url">/visualization/socialHealthRadial</string>
+    <string name="radial_relative_url">/visualization/socialHealthRadial</string>
+    <string name="sharing_relative_url">/sharing/edit/</string>
+    <string name="activity_relative_url">/visualization/activity/</string>
+    <string name="social_relative_url">/visualization/social/</string>
+    <string name="focus_relative_url">/visualization/focus/</string>
     
 </resources>
