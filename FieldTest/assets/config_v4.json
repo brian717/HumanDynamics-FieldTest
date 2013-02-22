@@ -1,0 +1,20 @@
+[
+{
+	"@type": "edu.mit.media.funf.probe.builtin.ActivityProbe",
+    "maxScanTime": 40,
+    "@schedule": {
+	    "strict": true,
+	    "interval": 120,
+	    "duration": 15,
+	    "opportunistic": true
+	}
+},
+{
+	"@type": "edu.mit.media.funf.probe.builtin.ScreenProbe",
+	"maxScanTime": 40,
+	"@schedule": {
+		"strict": true,
+		"opportunistic": true
+	}
+}
+]

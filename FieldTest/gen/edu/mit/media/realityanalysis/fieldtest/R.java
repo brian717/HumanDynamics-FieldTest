@@ -15,14 +15,15 @@ public final class R {
     }
     public static final class id {
         public static final int ReauthMenuItem=0x7f070010;
+        public static final int data_upload_period_textview=0x7f070000;
         public static final int fragment_webview=0x7f07000d;
-        public static final int listView1=0x7f070000;
         public static final int loading_status=0x7f07000b;
         public static final int loading_status_message=0x7f07000c;
         public static final int login=0x7f070006;
         public static final int login_form=0x7f070003;
         public static final int login_status=0x7f070001;
         public static final int login_status_message=0x7f070002;
+        public static final int menu_debug=0x7f070011;
         public static final int menu_forgot_password=0x7f07000f;
         public static final int menu_settings=0x7f07000e;
         public static final int pagerTabStrip=0x7f070009;
@@ -67,7 +68,9 @@ public final class R {
         public static final int login_relative_url=0x7f04001c;
         public static final int menu_forgot_password=0x7f040016;
         public static final int menu_settings=0x7f040006;
+        public static final int notification_api_relative_url=0x7f040027;
         public static final int password_prefs_key=0x7f040005;
+        public static final int places_relative_url=0x7f040028;
         public static final int prefs_file=0x7f040001;
         public static final int problem_contacting_server=0x7f04000c;
         public static final int prompt_password=0x7f040013;
