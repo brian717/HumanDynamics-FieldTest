@@ -1,7 +1,5 @@
 package edu.mit.media.realityanalysis.fieldtest;
 
-import static edu.mit.media.funf.Utils.TAG;
-
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
@@ -24,9 +22,9 @@ import javax.net.ssl.X509TrustManager;
 
 import android.util.Log;
 import edu.mit.media.funf.storage.HttpArchive;
-import edu.mit.media.funf.storage.RemoteArchive;
+import edu.mit.media.funf.storage.RemoteFileArchive;
 
-public class HttpsArchive implements RemoteArchive {
+public class HttpsArchive implements RemoteFileArchive {
 
 	private String uploadUrl;
 	private String mimeType;
@@ -120,7 +118,7 @@ public class HttpsArchive implements RemoteArchive {
 				fileInputStream = new FileInputStream(file); 
 			}catch (FileNotFoundException e) {
 				e.printStackTrace();
-				Log.e(TAG, "file not found");
+				Log.e("Funf", "file not found");
 			}
 			// open a URL connection to the Servlet 
 			Log.d("UPLOADDATA", "upload url: "+uploadurl);

@@ -86,7 +86,7 @@
             android:enabled="true" >
         </service>
         <service
-            android:name="edu.mit.media.realityanalysis.fieldtest.MainPipeline"
+            android:name="edu.mit.media.funf.probe.builtin.LocationProbe"
             android:enabled="true" >
         </service>
         <service
@@ -121,6 +121,11 @@
             android:name="edu.mit.media.realityanalysis.fieldtest.DebugActivity"
             android:label="@string/title_activity_debug" >
         </activity>
+        <service android:name="edu.mit.media.realityanalysis.fieldtest.NotificationService" android:enabled="true"></service>
+        <service android:enabled="true" android:name="edu.mit.media.realityanalysis.fieldtest.FunfManagerService">
+            <meta-data android:name="MainPipelineConfig" android:resource="@string/main_pipeline_config"/>
+            
+        </service>
     </application>
 
 </manifest>

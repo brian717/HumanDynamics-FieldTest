@@ -1,8 +1,8 @@
 {       "name": "FieldTrial",
         "version":1,
-        "dataArchivePeriod":600,
+        "dataArchivePeriod":1800,
         "dataUploadUrl":"http:\/\/working-title.media.mit.edu:8003\/connectors\/funf\/set_funf_data",
-        "dataUploadPeriod":600,
+        "dataUploadPeriod":1800,
         "dataRequests":{
         "edu.mit.media.funf.probe.builtin.ActivityProbe": [
 	            { "PERIOD": 120, "DURATION": 15 }
@@ -15,6 +15,9 @@
 	        ],
 	        "edu.mit.media.funf.probe.builtin.CallLogProbe": [
 	            { "PERIOD": 1800 }
+	        ],
+	        "edu.mit.media.funf.probe.builtin.LocationProbe": [
+	        	{ "PERIOD": 1800, "DURATION": 30 }
 	        ]
         }
 }

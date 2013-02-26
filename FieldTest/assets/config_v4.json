@@ -1,0 +1,33 @@
+[
+{
+	"@type": "edu.mit.media.realityanalysis.fieldtest.MainPipelineV4",
+	"schedules": {
+		"archive": {
+			"interval": 3600,
+			"opportunistic": false
+		},
+		"upload": {
+			"interval": 1800,
+			"opportunistic": false
+		}
+	}
+},
+{
+	"@type": "edu.mit.media.funf.probe.builtin.ActivityProbe",
+    "maxScanTime": 40,
+    "@schedule": {
+	    "strict": true,
+	    "interval": 120,
+	    "duration": 15,
+	    "opportunistic": true
+	}
+},
+{
+	"@type": "edu.mit.media.funf.probe.builtin.ScreenProbe",
+	"maxScanTime": 40,
+	"@schedule": {
+		"strict": true,
+		"opportunistic": true
+	}
+}
+]

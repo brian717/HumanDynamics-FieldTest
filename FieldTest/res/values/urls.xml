@@ -11,5 +11,7 @@
     <string name="activity_relative_url">/visualization/activity/</string>
     <string name="social_relative_url">/visualization/social/</string>
     <string name="focus_relative_url">/visualization/focus/</string>
+    <string name="notification_api_relative_url">/api/personal_data/notification/</string>
+    <string name="places_relative_url">/visualization/places/</string>
     
 </resources>

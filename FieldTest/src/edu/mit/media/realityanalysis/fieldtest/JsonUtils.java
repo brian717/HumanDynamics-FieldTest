@@ -33,7 +33,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 
-import edu.mit.media.funf.Utils;
+import edu.mit.media.funf.util.BundleUtil;
 
 public class JsonUtils {
 	
@@ -45,7 +45,7 @@ public class JsonUtils {
 		@Override
 		public JsonElement serialize(Bundle bundle, Type type, JsonSerializationContext context) {
 			JsonObject object = new JsonObject();
-			for (Map.Entry<String, Object> entry : Utils.getValues(bundle).entrySet()) {
+			for (Map.Entry<String, Object> entry : BundleUtil.getValues(bundle).entrySet()) {
 				object.add(entry.getKey(), context.serialize(entry.getValue()));
 			}
 			return object;
